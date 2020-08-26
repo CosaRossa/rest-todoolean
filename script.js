@@ -98,13 +98,11 @@ function addDeleteListener() {
 function deleteTask() {
   var taskDone = $(this);
   var idTaskDone = taskDone.data('id');
-  console.log(idTaskDone);
 
   $.ajax({
     url: 'http://157.230.17.132:3006/todos/'+idTaskDone,
     method: 'DELETE',
     success: function (data) {
-      console.log(data);
       getTasks();
     },
     error: function (err) {
